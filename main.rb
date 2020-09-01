@@ -1,5 +1,6 @@
 require 'Crass'
 require_relative './utils/utils.rb'
+require 'pp'
 
 def run()
   include Utils
@@ -20,6 +21,13 @@ def run()
     tree.each do |node|
       if node[:node] == :style_rule
         errs = verify_selector_typecase(node[:selector])
+        errors.concat(errs) unless errs.nil?
+      end
+    end
+
+    tree.each do |node|
+      if node[:node] == :style_rule
+        errs = verify_length_zero(node[:children])
         errors.concat(errs) unless errs.nil?
       end
     end
