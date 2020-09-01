@@ -19,7 +19,7 @@ def run()
 
     tree.each do |node|
       if node[:node] == :style_rule
-        errs = verify_selector_typecase(node[:selector], tree)
+        errs = verify_selector_typecase(node[:selector])
         errors.concat(errs) unless errs.nil?
       end
     end

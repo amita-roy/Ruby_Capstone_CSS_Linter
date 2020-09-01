@@ -12,11 +12,11 @@ module Utils
     errors
   end
 
-  def verify_selector_typecase(selector, tree)
+  def verify_selector_typecase(selector)
     errors = []
     selector_rules = [SelectorTypeCase]
     selector_rules.each do |rule|
-      err = rule.check(selector, tree)
+      err = rule.check(selector)
       errors.push(err) unless err.nil?
     end
     errors

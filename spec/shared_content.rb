@@ -11,7 +11,19 @@ RSpec.shared_context 'shared_content' do
     { :node => :selector, :value => "a d,\nb > c", :tokens => [{ :node => :ident, :pos => 0, :raw => 'a', :value => 'a' }, { :node => :whitespace, :pos => 1, :raw => ' ' }, { :node => :ident, :pos => 2, :raw => 'd', :value => 'd' }, { :node => :comma, :pos => 3, :raw => ',' }, { :node => :whitespace, :pos => 4, :raw => "\n" }, { :node => :ident, :pos => 5, :raw => 'b', :value => 'b' }, { :node => :whitespace, :pos => 6, :raw => ' ' }, { :node => :delim, :pos => 7, :raw => '>', :value => '>' }, { :node => :whitespace, :pos => 8, :raw => ' ' }, { :node => :ident, :pos => 9, :raw => 'c', :value => 'c' }, { :node => :whitespace, :pos => 10, :raw => ' ' }] }
   end
 
+  def selector_typecase
+    { :node => :selector, :value => '#IDP', :tokens => [{ :node => :hash, :pos => 0, :raw => '#IDP', :type => :id, :value => 'IDP' }, { :node => :whitespace, :pos => 4, :raw => ' ' }] }
+  end
+
+  def selector_typecase2
+    { :node => :selector, :value => '#idp', :tokens => [{ :node => :hash, :pos => 0, :raw => '#idp', :type => :id, :value => 'idp' }, { :node => :whitespace, :pos => 4, :raw => ' ' }] }
+  end
+
   def tokens
     [{ :node => :ident, :pos => 0, :raw => 'a', :value => 'a' }, { :node => :whitespace, :pos => 1, :raw => ' ' }, { :node => :ident, :pos => 2, :raw => 'd', :value => 'd' }]
+  end
+
+  def selectortypcase_tokens
+    [{ :node => :hash, :pos => 0, :raw => '#IDP', :type => :id, :value => 'IDP' }, { :node => :whitespace, :pos => 4, :raw => ' ' }]
   end
 end

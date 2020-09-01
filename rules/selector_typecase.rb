@@ -3,7 +3,7 @@ class SelectorTypeCase
     tokens.select { |elem| elem[:node] == :ident || elem[:node] == :hash }.map { |elem| elem[:value] }
   end
 
-  def self.check(selector, tree)
+  def self.check(selector)
     has_uppercase = false
     tokens = selector[:tokens]
     selectors = format_tokens(tokens)
