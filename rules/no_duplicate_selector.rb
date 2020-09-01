@@ -1,5 +1,4 @@
 require 'pp'
-require 'pry'
 
 class NoDuplicateSelectorRule
   def self.format_tokens(tokens)
