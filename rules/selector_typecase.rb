@@ -6,11 +6,8 @@ class SelectorTypeCase
   def self.check(selector, tree)
     has_uppercase = false
     tokens = selector[:tokens]
-    p tokens
     selectors = format_tokens(tokens)
-    p selectors
     selectors.each do |item|
-      p item
       has_uppercase = true if item =~ /[A-Z]/
     end
 
