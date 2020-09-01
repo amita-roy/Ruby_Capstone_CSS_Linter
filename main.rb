@@ -16,6 +16,13 @@ def run()
         errors.concat(errs) unless errs.nil?
       end
     end
+
+    tree.each do |node|
+      if node[:node] == :style_rule
+        errs = verify_selector_typecase(node[:selector], tree)
+        errors.concat(errs) unless errs.nil?
+      end
+    end
   end
   errors.each do |err|
     puts err
