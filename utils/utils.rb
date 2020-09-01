@@ -1,3 +1,5 @@
+require_relative '../rules/no_duplicate_selector.rb'
+
 module Utils
   def verify_selector_rules(selector, tree)
     errors = []

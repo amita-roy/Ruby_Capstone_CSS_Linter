@@ -1,0 +1,8 @@
+a d,
+b > c {
+  color: blue;
+}
+b > c,
+a d {
+  color: red;
+}

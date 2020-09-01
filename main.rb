@@ -1,9 +1,9 @@
 require 'Crass'
-require_relative './rules/no_duplicate_selector.rb'
 require_relative './utils/utils.rb'
 
 def run()
   include Utils
+
   path = ARGV.first
   errors = []
   File.open(path) do |file|
