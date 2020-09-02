@@ -35,7 +35,7 @@ class ValidUnits
 
     dimensions = retrieve_dimension(properties)
     dimensions.each do |dimension|
-      unless units.include?(dimension[:unit])
+      unless units.include?(dimension[:unit]) # rubocop:disable Style/Next
         invalid_unit = true
         unit = dimension[:unit]
         value = dimension[:value]

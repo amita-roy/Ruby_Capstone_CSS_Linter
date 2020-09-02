@@ -12,7 +12,7 @@ class NoDuplicateSelectorRule
     has_duplicates = selectors.length > selectors.uniq.length
 
     tree.each do |node|
-      if node[:node] == :style_rule
+      if node[:node] == :style_rule # rubocop:disable Style/Next
         other_selector = node[:selector]
         tokens = format_tokens(other_selector[:tokens])
         has_duplicates = true if other_selector[:value] != selector[:value] && selectors.sort == tokens.sort
