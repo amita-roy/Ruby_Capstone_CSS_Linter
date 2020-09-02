@@ -2,6 +2,8 @@
 
 > In this project, I have created a css linter with 4 rules.
 
+- You can see the video presentation of the project here: [CSS_Linter](https://github.com/Amita-Roy/Ruby_Capstone_CSS_Linter/issues)
+
 ## no-duplicate-selectors (Rule 1)
 
 > Disallow duplicate selectors within a stylesheet.
@@ -13,7 +15,7 @@
 _Duplication of a single selector with a rule's selector list, e.g. a, b, a {}._
 _Duplication of a selector list within a stylesheet, e.g. a, b {} a, b {}. Duplicates are found even if the selectors come in different orders or have different spacing, e.g. a d, b > c {} b>c, a d {}._
 
-![image](.github/)
+![image](.github/duplicate_selectors.png)
 
 ## length-zero-no-unit (Rule 2)
 
@@ -23,7 +25,7 @@ _Duplication of a selector list within a stylesheet, e.g. a, b {} a, b {}. Dupli
 
 _Lengths refer to distance measurements. A length is a dimension, which is a number immediately followed by a unit identifier. However, for zero lengths the unit identifier is optional._
 
-![image](.github/)
+![image](.github/length_zero_no_unit.png)
 
 ## selector-type-case (Rule 3)
 
@@ -33,7 +35,7 @@ _Lengths refer to distance measurements. A length is a dimension, which is a num
 
 _It will throw an error if any selector in the stylesheet is in uppercase._
 
-![image](.github/)
+![image](.github/selector_typecase.png)
 
 ## valid_units (Rule 4)
 
@@ -43,7 +45,7 @@ _It will throw an error if any selector in the stylesheet is in uppercase._
 
 _It will provide suggestion for correct way of use for units eg. instead of `23pixel` use `23px`._
 
-![image](.github/)
+![image](.github/valid_units.png)
 
 ## The files structure of the project
 
@@ -134,9 +136,9 @@ _Run the tests with the command:_
 
 `rspec`
 
-> Test Coverage Screenshot
+> Tests screenshots
 
-![screenshot](.github/coverage.png)
+![tests](.github/testing.png)
 
 ## Test Coverage
 
@@ -159,6 +161,10 @@ _Add the below code on the top of the `spec_helper.rb`_
 _After running the rspec command in the terminal, a coverage directory will be generated_
 _copy the path of index.html and open it in browser to check the test coverage_
 
+> Test Coverage Screenshot
+
+![screenshot](.github/coverage.png)
+
 ## Author
 
 👤 **Amita Roy**
@@ -171,7 +177,7 @@ _copy the path of index.html and open it in browser to check the test coverage_
 
 Our favourite contributions are those that help us improve the project, whether with a contribution, an issue, or a feature request!
 
-Feel free to check the [issues page](https://github.com/cristianCeamatu/microverse-ruby-tic-tac-toe/issues) to either create an issue or help us out by fixing an existing one.
+Feel free to check the [issues page](https://github.com/Amita-Roy/Ruby_Capstone_CSS_Linter/issues) to either create an issue or help us out by fixing an existing one.
 
 ## Show your support
 
