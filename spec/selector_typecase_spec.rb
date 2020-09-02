@@ -23,14 +23,14 @@ describe SelectorTypeCase do
   end
 
   describe '#format_tokens' do
-    include_context 'shared_content'
+    include_context 'shared_typecase_content'
     context 'with valid input' do
       include_examples 'shared_example'
     end
   end
 
   describe '#check' do
-    include_context 'shared_content'
+    include_context 'shared_typecase_content'
     let(:error_string) { 'Selector type is uppercase in #IDP' }
 
     it 'raise a NameError error when called without class' do
