@@ -33,11 +33,11 @@ describe NoDuplicateSelectorRule do
 
     context 'with valid input' do
       it 'returns nil if no duplicate found' do
-        expect(subject::check(selector, tree_with_no_duplicates)).to be_nil
+        expect(subject.check(selector, tree_with_no_duplicates)).to be_nil
       end
 
       it 'returns error string when duplicate selector found' do
-        expect(subject::check(selector, tree)).to eq(error_string)
+        expect(subject.check(selector, tree)).to eq(error_string)
       end
     end
   end

@@ -64,35 +64,33 @@ end
 
 RSpec.shared_context 'shared_content_Lengthnozerounit' do
   def children
-    [
-      { node: :property,
-       name: 'top',
-       value: '0px',
+    [{ node: :property,
+      name: 'top',
+      value: '0px',
 
-       children: [{ node: :whitespace, pos: 10, raw: ' ' },
-                  { node: :dimension,
-                    pos: 11,
-                    raw: '0px',
-                    repr: '0',
-                    type: :integer,
-                    unit: 'px',
-                    value: 0 }],
+      children: [{ node: :whitespace, pos: 10, raw: ' ' },
+                 { node: :dimension,
+                   pos: 11,
+                   raw: '0px',
+                   repr: '0',
+                   type: :integer,
+                   unit: 'px',
+                   value: 0 }],
 
-       important: false,
+      important: false,
 
-       tokens: [{ node: :ident, pos: 6, raw: 'top', value: 'top' },
-                { node: :colon, pos: 9, raw: ':' },
-                { node: :whitespace, pos: 10, raw: ' ' },
-                { node: :dimension,
-                  pos: 11,
-                  raw: '0px',
-                  repr: '0',
-                  type: :integer,
-                  unit: 'px',
-                  value: 0 }] },
-      { node: :semicolon, pos: 14, raw: ';' },
-      { node: :whitespace, pos: 15, raw: "\n" }
-    ]
+      tokens: [{ node: :ident, pos: 6, raw: 'top', value: 'top' },
+               { node: :colon, pos: 9, raw: ':' },
+               { node: :whitespace, pos: 10, raw: ' ' },
+               { node: :dimension,
+                 pos: 11,
+                 raw: '0px',
+                 repr: '0',
+                 type: :integer,
+                 unit: 'px',
+                 value: 0 }] },
+     { node: :semicolon, pos: 14, raw: ';' },
+     { node: :whitespace, pos: 15, raw: "\n" }]
   end
 
   def properties

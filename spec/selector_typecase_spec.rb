@@ -13,12 +13,12 @@ describe SelectorTypeCase do
   context 'has 2 methods' do
     it 'has format_tokens class method' do
       expect(subject).to receive(:format_tokens).with([]).and_return([])
-      subject::format_tokens([])
+      subject.format_tokens([])
     end
 
     it 'has check class method' do
       expect(subject).to receive(:check).with({}).and_return('')
-      subject::check({})
+      subject.check({})
     end
   end
 
