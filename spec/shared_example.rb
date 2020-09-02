@@ -9,6 +9,6 @@ RSpec.shared_examples 'shared_example' do
   end
 
   it 'raise a NameError error when called without class' do
-    expect { format_tokens }.to raise_error { NameError }
+    expect { format_tokens }.to(raise_error { NameError })
   end
 end
