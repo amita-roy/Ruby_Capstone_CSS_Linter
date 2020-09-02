@@ -12,3 +12,21 @@ RSpec.shared_examples 'shared_example' do
     expect { format_tokens }.to(raise_error { NameError })
   end
 end
+
+RSpec.shared_examples 'shared_example2' do
+  it 'returns properties as result' do
+    expect(subject.format_children(children)).to eq(properties)
+  end
+
+  it 'checks whether the result is an instance of array' do
+    expect(subject.format_children(children)).to be_instance_of(Array)
+  end
+
+  it 'returns dimensions as result' do
+    expect(subject.retrieve_dimension(properties)).to eq(dimensions)
+  end
+
+  it 'checks whether the result is an instance of array' do
+    expect(subject.retrieve_dimension(properties)).to be_instance_of(Array)
+  end
+end

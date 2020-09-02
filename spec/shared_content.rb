@@ -130,3 +130,68 @@ RSpec.shared_context 'shared_content_Lengthnozerounit' do
        value: 0 }]
   end
 end
+
+RSpec.shared_context 'shared_content_validunits' do
+  def children
+    [{ node: :whitespace, pos: 3, raw: "\n" + '  ' },
+     { node: :property,
+      name: 'height',
+      value: '100pixel',
+      children: [{ node: :whitespace, pos: 13, raw: ' ' },
+                 { node: :dimension,
+                   pos: 14,
+                   raw: '100pixel',
+                   repr: '100',
+                   type: :integer,
+                   unit: 'pixel',
+                   value: 100 }],
+      important: false,
+      tokens: [{ node: :ident, pos: 6, raw: 'height', value: 'height' },
+               { node: :colon, pos: 12, raw: ':' },
+               { node: :whitespace, pos: 13, raw: ' ' },
+               { node: :dimension,
+                 pos: 14,
+                 raw: '100pixel',
+                 repr: '100',
+                 type: :integer,
+                 unit: 'pixel',
+                 value: 100 }] },
+     { node: :semicolon, pos: 22, raw: ';' },
+     { node: :whitespace, pos: 23, raw: "\n" }]
+  end
+
+  def properties
+    [{ node: :property,
+      name: 'height',
+      value: '100pixel',
+      children: [{ node: :whitespace, pos: 13, raw: ' ' },
+                 { node: :dimension,
+                   pos: 14,
+                   raw: '100pixel',
+                   repr: '100',
+                   type: :integer,
+                   unit: 'pixel',
+                   value: 100 }],
+      important: false,
+      tokens: [{ node: :ident, pos: 6, raw: 'height', value: 'height' },
+               { node: :colon, pos: 12, raw: ':' },
+               { node: :whitespace, pos: 13, raw: ' ' },
+               { node: :dimension,
+                 pos: 14,
+                 raw: '100pixel',
+                 repr: '100',
+                 type: :integer,
+                 unit: 'pixel',
+                 value: 100 }] }]
+  end
+
+  def dimensions
+    [{ node: :dimension,
+       pos: 14,
+       raw: '100pixel',
+       repr: '100',
+       type: :integer,
+       unit: 'pixel',
+       value: 100 }]
+  end
+end

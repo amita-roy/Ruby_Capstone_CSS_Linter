@@ -35,6 +35,7 @@ class ValidUnits
     valid_unit = ''
     invalid_unit = false
     properties = format_children(children)
+
     dimensions = retrieve_dimension(properties)
     dimensions.each do |dimension|
       if !units.include?(dimension[:unit])
