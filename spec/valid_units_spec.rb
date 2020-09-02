@@ -26,8 +26,8 @@ describe ValidUnits do
     end
 
     it 'has valid_units method with one argument' do
-      expect(subject).to receive(:valid_units).with([]).and_return('')
-      subject.valid_units([])
+      expect(subject).to receive(:valid_units).with('').and_return('')
+      subject.valid_units('')
     end
   end
 
@@ -39,11 +39,19 @@ describe ValidUnits do
   end
 
   describe '#valid_units' do
-    it 'checks return value is an instance of string' do
-      expect(subject.valid_units('pixel')).to be_instance_of(String)
+    let(:valid_unit) { '' }
+
+    it 'returns a string either valid unit or empty' do
+      expect(subject.valid_units('anything')).to eq(valid_unit)
     end
-    it 'returns valid unit string' do
+
+    it 'returns a valid unit string or empty string' do
       expect(subject.valid_units('pixel')).to eq('px')
+      expect(subject.valid_units('percentage')).to eq('%')
+      expect(subject.valid_units('viewportheight')).to eq('vh')
+      expect(subject.valid_units('viewportwidth')).to eq('vw')
+      expect(subject.valid_units('pixel')).to be_instance_of(String)
+      expect(valid_unit).to be_empty
     end
   end
 

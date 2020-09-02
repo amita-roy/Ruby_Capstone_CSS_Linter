@@ -12,20 +12,18 @@ class ValidUnits
   end
 
   def self.valid_units(unit)
-    valid_unit = case unit
-      when 'pixel'
-        return 'px'
-      when 'percentage'
-        return '%'
-      when 'viewportheight'
-        return 'vh'
-      when 'viewportwidth'
-        return 'vw'
-      else
-        return ''
-      end
-
-    valid_unit
+    case unit
+    when 'pixel'
+      'px'
+    when 'percentage'
+      '%'
+    when 'viewportheight'
+      'vh'
+    when 'viewportwidth'
+      'vw'
+    else
+      ''
+    end
   end
 
   def self.check(children)
