@@ -12,33 +12,32 @@ class ValidUnits
   end
 
   def self.valid_units(unit)
-    valid_unit = ''
-    case unit
-    when 'pixel'
-      valid_unit = 'px'
-    when 'percentage'
-      valid_unit = '%'
-    when 'viewportheight'
-      valid_unit = 'vh'
-    when 'viewportwidth'
-      valid_unit = 'vw'
-    else
-      valid_unit = ''
-    end
-    return valid_unit
+    valid_unit = case unit
+      when 'pixel'
+        return 'px'
+      when 'percentage'
+        return '%'
+      when 'viewportheight'
+        return 'vh'
+      when 'viewportwidth'
+        return 'vw'
+      else
+        return ''
+      end
+
+    valid_unit
   end
 
   def self.check(children)
     units = %w[px em rem vh vw %]
     unit = ''
     value = ''
-    valid_unit = ''
     invalid_unit = false
     properties = format_children(children)
 
     dimensions = retrieve_dimension(properties)
     dimensions.each do |dimension|
-      if !units.include?(dimension[:unit])
+      unless units.include?(dimension[:unit])
         invalid_unit = true
         unit = dimension[:unit]
         value = dimension[:value]
