@@ -1,5 +1,5 @@
 require 'Crass'
-require_relative './utils/utils.rb'
+require_relative './utils/verify_rules.rb'
 require 'pp'
 
 def run()
@@ -11,33 +11,10 @@ def run()
     contents = file.read
     tree = Crass.parse(contents)
 
-    tree.each do |node|
-      if node[:node] == :style_rule
-        errs = verify_selector_rules(node[:selector], tree)
-        errors.concat(errs) unless errs.nil?
-      end
-    end
-
-    tree.each do |node|
-      if node[:node] == :style_rule
-        errs = verify_selector_typecase(node[:selector])
-        errors.concat(errs) unless errs.nil?
-      end
-    end
-
-    tree.each do |node|
-      if node[:node] == :style_rule
-        errs = verify_length_zero(node[:children])
-        errors.concat(errs) unless errs.nil?
-      end
-    end
-
-    tree.each do |node|
-      if node[:node] == :style_rule
-        errs = verify_valid_units(node[:children])
-        errors.concat(errs) unless errs.nil?
-      end
-    end
+    duplicate_selector(tree, errors)
+    selector_typcase(tree, errors)
+    length_zero_unit(tree, errors)
+    valid_unit(tree, errors)
   end
   errors.each do |err|
     puts err
