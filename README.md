@@ -2,7 +2,7 @@
 
 > In this project, I have created a css linter with 4 rules.
 
-- You can see the video presentation of the project here: [CSS_Linter](https://github.com/Amita-Roy/Ruby_Capstone_CSS_Linter/issues)
+- You can see the video presentation of the project here: [CSS_Linter](https://www.loom.com/share/a8404b82fdc144bd939c5b1277f4f10c)
 
 ## no-duplicate-selectors (Rule 1)
 
