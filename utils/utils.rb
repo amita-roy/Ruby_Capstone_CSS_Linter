@@ -1,6 +1,7 @@
 require_relative '../rules/no_duplicate_selector.rb'
 require_relative '../rules/selector_typecase.rb'
 require_relative '../rules/length_zero_no_unit.rb'
+require_relative '../rules/valid_units.rb'
 require 'pp'
 
 module Utils
@@ -26,8 +27,18 @@ module Utils
 
   def verify_length_zero(children)
     errors = []
-    selector_rules = [LengthZeroNoUnit]
-    selector_rules.each do |rule|
+    rules = [LengthZeroNoUnit]
+    rules.each do |rule|
+      err = rule.check(children)
+      errors.push(err) unless err.nil?
+    end
+    errors
+  end
+
+  def verify_valid_units(children)
+    errors = []
+    rules = [ValidUnits]
+    rules.each do |rule|
       err = rule.check(children)
       errors.push(err) unless err.nil?
     end

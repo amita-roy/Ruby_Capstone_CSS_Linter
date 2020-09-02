@@ -31,6 +31,13 @@ def run()
         errors.concat(errs) unless errs.nil?
       end
     end
+
+    tree.each do |node|
+      if node[:node] == :style_rule
+        errs = verify_valid_units(node[:children])
+        errors.concat(errs) unless errs.nil?
+      end
+    end
   end
   errors.each do |err|
     puts err
