@@ -47,13 +47,6 @@ _It will provide suggestion for correct way of use for units eg. instead of `23p
 
 ![image](.github/valid_units.png)
 
-## The files structure of the project
-
-- css directory containing each rule directory for css cases.
-- rules directory has all the rules classes
-- utils directory has 2 helper files
-- main.rb is the file where the linter run method has defined
-
 ### Accessing The Linter
 
 - To download the contents of this repository and run the linter locally, follow the steps in the ['Local Installation' section](#local-installation).
@@ -65,8 +58,6 @@ _It will provide suggestion for correct way of use for units eg. instead of `23p
 - Rubocop
 - simplecov (gem for test coverage report)
 - crass (gem)
-
-There are no pre-requisites for enjoying the game through this method.
 
 ## Local Installation
 
@@ -86,16 +77,23 @@ To get your own copy of our project simply clone the repository to your local ma
 
 `cd ruby_capstone_css_linter`
 
-> crass is CSS parser gem
+> I am using crass gem,which is a CSS parser gem
 
-**Step 3**: before runnind the linter, please install gem crass with the following command
+**Step 3**: before running the linter, please install all the required gem with the following command
 
-`gem install crass`
+`bundle install`
 
-**Step 4**: Once in the root directory of the repository, simply enter the following line of code to run the linter on specific css file as per the rules
+**Step 4**: Once in the root directory of the repository, simply enter the following line of code to run the linter on css file.
 
-`ruby main.rb css/no-duplicate-selector/case2.css`
-`ruby main.rb css/length-zero-no-unit/case1.css`
+`bin/main.rb css/no-duplicate-selector/case2.css`
+`bin/main.rb css/length-zero-no-unit/case1.css`
+
+### For your own css file, linter running instruction eg.
+
+_after the `bin/main.rb` you can mention the path of your css file._
+
+`bin/main.rb css-directory/css-file`
+`bin/main.rb styles/style.css`
 
 it will return the errors from the file if any error found in the stylesheet.
 
@@ -128,7 +126,7 @@ In addition to the above, the repo also contains .rubocop.yml for linting.
 
 _After cloning the repository, open the terminal and Install RSpec on your local system by running:_
 
-`gem install rspec`
+> `gem install rspec` or if you have run the command `bundle install` all required gems will be downloaded itself.
 
 **Step 2**:
 

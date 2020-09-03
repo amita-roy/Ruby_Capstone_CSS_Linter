@@ -1,4 +1,4 @@
-require 'Crass'
+require 'crass'
 
 RSpec.shared_context 'shared_content' do
   def tree
