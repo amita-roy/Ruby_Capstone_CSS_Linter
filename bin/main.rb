@@ -1,5 +1,7 @@
-require 'Crass'
-require_relative './utils/verify_rules'
+#!/usr/bin/env ruby
+
+require 'crass'
+require_relative '../utils/verify_rules'
 
 class Main
   include VerifyRules
